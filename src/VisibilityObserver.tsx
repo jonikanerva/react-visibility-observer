@@ -10,6 +10,7 @@ const VisibilityContext = createContext({ isVisible: false, entries: [] })
 
 interface VisibilityObeserverProps extends IntersectionObserverInit {
   children: React.ReactNode
+  className?: string
   root?: Element | null
   rootMargin?: string
   threshold?: number | number[]
@@ -17,6 +18,7 @@ interface VisibilityObeserverProps extends IntersectionObserverInit {
 
 const VisibilityObeserver: React.FC<VisibilityObeserverProps> = ({
   children,
+  className,
   root = null,
   rootMargin = '50px 50px 50px 50px',
   threshold = 0
@@ -50,7 +52,7 @@ const VisibilityObeserver: React.FC<VisibilityObeserverProps> = ({
   }, [])
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className={className}>
       <VisibilityContext.Provider value={{ isVisible, entries }}>
         {children}
       </VisibilityContext.Provider>
