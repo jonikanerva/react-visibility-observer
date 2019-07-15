@@ -1,0 +1,21 @@
+{
+  "name": "react-visibility-observer",
+  "version": "0.0.1",
+  "description": "React component using the Intersection Observer API for watching when an element is visible in viewport.",
+  "main": "dist/index.js",
+  "author": "Joni Kanerva <jhonny@jhonny.org>",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "rm -rf dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0-0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.23",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "^3.5.3"
+  }
+}

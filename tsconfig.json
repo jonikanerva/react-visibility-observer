@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "pretty": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "es5"
+  },
+  "files": ["src/index.ts"],
+  "exclude": ["node_modules", "dist", "src"]
+}
