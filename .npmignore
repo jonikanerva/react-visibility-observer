@@ -2,6 +2,7 @@ node_modules/
 src/
 .gitignore
 .npmignore
-tsconfig.json
-yarn.lock
 .vscode
+tsconfig.json
+tslint.json
+yarn.lock

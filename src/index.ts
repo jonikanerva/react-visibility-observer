@@ -2,7 +2,7 @@ import {
   useVisibilityObserver,
   VisibilityObeserver,
   VisibilityObeserverProps
-} from "./VisibilityObserver";
+} from './VisibilityObserver'
 
-export default VisibilityObeserver;
-export { useVisibilityObserver, VisibilityObeserverProps };
+export default VisibilityObeserver
+export { useVisibilityObserver, VisibilityObeserverProps }

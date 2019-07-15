@@ -6,6 +6,9 @@
   "author": "Joni Kanerva <jhonny@jhonny.org>",
   "license": "MIT",
   "scripts": {
+    "lint": "yarn lint:tslint && yarn lint:prettier",
+    "lint:prettier": "prettier --list-different --parser typescript --config package.json 'src/**/*.{ts,tsx}'",
+    "lint:tslint": "tslint --project .",
     "prepublish": "rm -rf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,8 +17,15 @@
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   }
 }

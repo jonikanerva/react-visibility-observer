@@ -1,0 +1,15 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "interface-name": {
+      "options": "never-prefix"
+    },
+    "no-angle-bracket-type-assertion": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-console": false,
+    "variable-name": {
+      "options": ["allow-leading-underscore", "allow-pascal-case"]
+    }
+  }
+}
