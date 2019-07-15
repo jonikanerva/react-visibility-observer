@@ -2,7 +2,7 @@
 
 React component using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for watching when an element is visible in the viewport.
 
-Written in TypeScript using React hooks and context.
+Written in TypeScript using React Hooks and Context. No dependencies.
 
 # Install
 
@@ -23,23 +23,23 @@ npm install --save react-visibility-observer
 ```jsx
 // Component.tsx
 
-import VisibilityObeserver from "react-visibility-observer";
+import VisibilityObeserver from 'react-visibility-observer'
 
 const Component: React.FC = () => (
   <VisibilityObeserver>
     <ChildComponent />
   </VisibilityObeserver>
-);
+)
 ```
 
 ```jsx
 // ChildComponent.tsx
 
-import { useVisibilityObserver } from "react-visibility-observer";
+import { useVisibilityObserver } from 'react-visibility-observer'
 
 const ChildComponent: React.FC = () => {
-  const { isVisible } = useVisibilityObserver();
+  const { isVisible } = useVisibilityObserver()
 
-  return <div>{isVisible ? "I'm visible!" : "I'm hidden!"}</div>;
-};
+  return <div>{isVisible ? "I'm visible!" : "I'm hidden!"}</div>
+}
 ```
