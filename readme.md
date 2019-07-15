@@ -22,6 +22,7 @@ npm install --save react-visibility-observer
 
 ```jsx
 // Component.tsx
+
 import VisibilityObeserver from "react-visibility-observer";
 
 const Component: React.FC = () => (
@@ -33,6 +34,7 @@ const Component: React.FC = () => (
 
 ```jsx
 // ChildComponent.tsx
+
 import { useVisibilityObserver } from "react-visibility-observer";
 
 const ChildComponent: React.FC = () => {
