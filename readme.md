@@ -44,8 +44,6 @@ const ChildComponent: React.FC = () => {
 }
 ```
 
-# Configuration
-
 ## Component
 
 You can configure the `VisibilityObeserver` component by passing in the following props.
