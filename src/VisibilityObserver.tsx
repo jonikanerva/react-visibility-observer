@@ -13,20 +13,37 @@ type DivRef = React.MutableRefObject<HTMLDivElement>
 interface VisibilityObeserverProps extends IntersectionObserverInit {
   children: React.ReactNode
   className?: string
+  triggerOnce?: boolean
   root?: Element | null
   rootMargin?: string
   threshold?: number | number[]
 }
 
+const addObserver = (ref: DivRef, observer: IntersectionObserver) => {
+  if (ref.current) {
+    observer.observe(ref.current)
+  }
+}
+
+const removeObserver = (ref: DivRef, observer: IntersectionObserver) => {
+  if (ref.current) {
+    observer.unobserve(ref.current)
+  }
+  observer.disconnect()
+}
+
 const VisibilityObeserver: React.FC<VisibilityObeserverProps> = ({
   children,
   className,
+  triggerOnce = false,
   root = null,
   rootMargin = '0 0 0 0',
   threshold = 0
 }) => {
   const [entries, setEntries] = useState()
   const [isVisible, setIsVisible] = useState(false)
+  const [observer, setObserver] = useState()
+
   const ref = useRef() as DivRef
 
   const observerOptions = { root, rootMargin, threshold }
@@ -38,19 +55,19 @@ const VisibilityObeserver: React.FC<VisibilityObeserverProps> = ({
     setIsVisible(visible)
   }
 
+  if (isVisible === true && triggerOnce === true) {
+    removeObserver(ref, observer)
+  }
+
   useEffect(() => {
-    const observer = new IntersectionObserver(observerCallback, observerOptions)
+    const intersectionObserver = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    )
+    setObserver(intersectionObserver)
+    addObserver(ref, intersectionObserver)
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
-      observer.disconnect()
-    }
+    return () => removeObserver(ref, intersectionObserver)
   }, [])
 
   return (
