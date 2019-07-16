@@ -8,6 +8,8 @@ import React, {
 
 const VisibilityContext = createContext({ isVisible: false, entries: [] })
 
+type DivRef = React.MutableRefObject<HTMLDivElement>
+
 interface VisibilityObeserverProps extends IntersectionObserverInit {
   children: React.ReactNode
   className?: string
@@ -23,9 +25,9 @@ const VisibilityObeserver: React.FC<VisibilityObeserverProps> = ({
   rootMargin = '0 0 0 0',
   threshold = 0
 }) => {
-  const [isVisible, setIsVisible] = useState(false)
   const [entries, setEntries] = useState()
-  const ref = useRef() as React.MutableRefObject<HTMLDivElement>
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef() as DivRef
 
   const observerOptions = { root, rootMargin, threshold }
   const observerCallback: IntersectionObserverCallback = observerEntries => {
