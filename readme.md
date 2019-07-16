@@ -78,7 +78,7 @@ You can get info from the observer by using the `useVisibilityObserver` hook in 
 const { isVisible, entries } = useVisibilityObserver()
 ```
 
-|  Variable    |  Type                          | Description                                                                                                                               |
-| ------------ | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-|  `isVisible` | `boolean`                      | Is the observed element in view.                                                                                                          |
-|  `entries`   |  `IntersectionObserverEntry[]` | Array of [IntersectionObserverEntry](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) objects being observerd. |
+|  Variable    |  Type                         | Description                                                                                                                               |
+| ------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+|  `isVisible` | `boolean`                     | Is the observed element in view.                                                                                                          |
+|  `entries`   | `IntersectionObserverEntry[]` | Array of [IntersectionObserverEntry](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) objects being observerd. |
