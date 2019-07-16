@@ -4,6 +4,8 @@ React component using the [Intersection Observer API](https://developer.mozilla.
 
 Written in TypeScript using React Hooks and Context. No dependencies.
 
+[![npm version](https://badge.fury.io/js/react-visibility-observer.svg)](https://badge.fury.io/js/react-visibility-observer)
+
 # Install
 
 with Yarn
