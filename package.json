@@ -29,13 +29,14 @@
     "lint:prettier": "prettier --list-different --parser typescript --config package.json 'src/**/*.{ts,tsx}'",
     "lint:tslint": "tslint --project .",
     "prepublish": "rm -rf dist && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'No tests yet!'"
   },
   "peerDependencies": {
     "react": "^16.8.0-0"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
+    "np": "^5.0.3",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
