@@ -80,3 +80,7 @@ const { isVisible, entries } = useVisibilityObserver()
 | ------------ | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 |  `isVisible` | `boolean`                     | Is the observed element in view.                                                                                                          |
 |  `entries`   | `IntersectionObserverEntry[]` | Array of [IntersectionObserverEntry](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) objects being observerd. |
+
+# Contribute
+
+Use GitHub [issues](https://github.com/jonikanerva/react-visibility-observer/issues) and [Pull Requests](https://github.com/jonikanerva/react-visibility-observer/pulls).
