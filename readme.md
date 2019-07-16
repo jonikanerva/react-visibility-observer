@@ -4,7 +4,10 @@ React component using the [Intersection Observer API](https://developer.mozilla.
 
 Written in TypeScript using React Hooks and Context. No dependencies.
 
-[![github license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/jonikanerva/react-visibility-observer/blob/master/license) [![npm version](https://img.shields.io/npm/v/react-visibility-observer.svg?style=flat&color=brightgreen)](https://www.npmjs.com/package/react-visibility-observer)
+![github license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+![npm version](https://img.shields.io/npm/v/react-visibility-observer.svg?color=brightgreen)
+![npm bundle size](https://img.shields.io/bundlephobia/min/react-visibility-observer.svg?color=brightgreen)
+![downloads](https://img.shields.io/npm/dw/react-visibility-observer.svg)
 
 # Install
 
