@@ -25,11 +25,13 @@
   },
   "main": "dist/index.js",
   "scripts": {
+    "dev": "tsc --watch",
+    "build": "rm -rf dist && tsc",
     "lint": "yarn lint:tslint && yarn lint:prettier",
     "lint:prettier": "prettier --list-different --parser typescript --config package.json 'src/**/*.{ts,tsx}'",
     "lint:tslint": "tslint --project .",
-    "prepublish": "rm -rf dist && tsc",
-    "test": "echo 'No tests yet!'"
+    "prepublish": "yarn build",
+    "test": "yarn lint"
   },
   "peerDependencies": {
     "react": "^16.8.0-0"
