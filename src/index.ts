@@ -1,8 +1,8 @@
 import {
   useVisibilityObserver,
-  VisibilityObeserver,
-  VisibilityObeserverProps
+  VisibilityObserver,
+  VisibilityObserverProps
 } from './VisibilityObserver'
 
-export default VisibilityObeserver
-export { useVisibilityObserver, VisibilityObeserverProps }
+export default VisibilityObserver
+export { useVisibilityObserver, VisibilityObserverProps }

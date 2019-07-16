@@ -23,12 +23,12 @@ npm install --save react-visibility-observer
 ```jsx
 // Component.tsx
 
-import VisibilityObeserver from 'react-visibility-observer'
+import VisibilityObserver from 'react-visibility-observer'
 
 const Component: React.FC = () => (
-  <VisibilityObeserver>
+  <VisibilityObserver>
     <ChildComponent />
-  </VisibilityObeserver>
+  </VisibilityObserver>
 )
 ```
 
@@ -46,11 +46,11 @@ const ChildComponent: React.FC = () => {
 
 ## Component
 
-You can configure the `VisibilityObeserver` component by passing in the following props.
+You can configure the `VisibilityObserver` component by passing in the following props.
 
 ```jsx
 const Component: React.FC = () => (
-  <VisibilityObeserver
+  <VisibilityObserver
     className="myClass"
     triggerOnce={true}
     root={document.querySelector('#scrollArea')}
@@ -58,7 +58,7 @@ const Component: React.FC = () => (
     threshold={0.2}
   >
     <ChildComponent />
-  </VisibilityObeserver>
+  </VisibilityObserver>
 )
 ```
 

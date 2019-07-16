@@ -10,7 +10,7 @@ const VisibilityContext = createContext({ isVisible: false, entries: [] })
 
 type DivRef = React.MutableRefObject<HTMLDivElement>
 
-interface VisibilityObeserverProps extends IntersectionObserverInit {
+interface VisibilityObserverProps extends IntersectionObserverInit {
   children: React.ReactNode
   className?: string
   triggerOnce?: boolean
@@ -32,7 +32,7 @@ const removeObserver = (ref: DivRef, observer: IntersectionObserver) => {
   observer.disconnect()
 }
 
-const VisibilityObeserver: React.FC<VisibilityObeserverProps> = ({
+const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
   children,
   className,
   triggerOnce = false,
@@ -88,4 +88,4 @@ const useVisibilityObserver = () => {
   }
 }
 
-export { VisibilityObeserver, useVisibilityObserver, VisibilityObeserverProps }
+export { VisibilityObserver, useVisibilityObserver, VisibilityObserverProps }
