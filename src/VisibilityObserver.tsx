@@ -20,7 +20,7 @@ const VisibilityObeserver: React.FC<VisibilityObeserverProps> = ({
   children,
   className,
   root = null,
-  rootMargin = '50px 50px 50px 50px',
+  rootMargin = '0 0 0 0',
   threshold = 0
 }) => {
   const [isVisible, setIsVisible] = useState(false)
