@@ -2,6 +2,7 @@ node_modules/
 src/
 .gitignore
 .npmignore
+.nvmrc
 .vscode
 tsconfig.json
 tslint.json
