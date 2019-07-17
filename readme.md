@@ -2,7 +2,7 @@
 
 React component using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for watching when an element is visible in the viewport.
 
-Written in TypeScript using React Hooks and Context. No dependencies. [Compatible with modern browsers.](https://caniuse.com/#search=IntersectionObserver)
+Written in TypeScript using React Hooks and Context. No dependencies.
 
 [![github license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/jonikanerva/react-visibility-observer/blob/master/license) [![npm version](https://img.shields.io/npm/v/react-visibility-observer.svg?color=brightgreen)](https://www.npmjs.com/package/react-visibility-observer) [![npm bundle size](https://img.shields.io/bundlephobia/min/react-visibility-observer.svg?color=brightgreen)](https://www.npmjs.com/package/react-visibility-observer) [![downloads](https://img.shields.io/npm/dw/react-visibility-observer.svg)](https://www.npmjs.com/package/react-visibility-observer) [![react](https://img.shields.io/npm/dependency-version/react-visibility-observer/peer/react.svg?color=brightgreen)](https://www.npmjs.com/package/react-visibility-observer)
 
@@ -84,6 +84,30 @@ const { isVisible, entries } = useVisibilityObserver()
 | ------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 |  `isVisible` | `boolean`                     | Is the observed element in view.                                                                                                         |
 |  `entries`   | `IntersectionObserverEntry[]` | Array of [IntersectionObserverEntry](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) objects being observed. |
+
+# Browser Support
+
+Intersection Observer API is [compatible with all modern browsers](https://caniuse.com/#search=IntersectionObserver). If you need support for older browsers, use the [polyfill by W3C](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
+
+Install with Yarn
+
+```
+yarn add intersection-observer
+```
+
+or with NPM
+
+```
+npm install --save intersection-observer
+```
+
+and add to the top of your client's entry point
+
+```ts
+// Browser.tsx
+
+import 'intersection-observer'
+```
 
 # Contribute
 
