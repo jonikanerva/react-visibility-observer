@@ -2,12 +2,9 @@
 
 React component using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for watching when an element is visible in the viewport.
 
-Written in TypeScript using React Hooks and Context. No dependencies.
+Written in TypeScript using React Hooks and Context. No dependencies. [Compatible with modern browsers.](https://caniuse.com/#search=IntersectionObserver)
 
-![github license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
-![npm version](https://img.shields.io/npm/v/react-visibility-observer.svg?color=brightgreen)
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-visibility-observer.svg?color=brightgreen)
-![downloads](https://img.shields.io/npm/dw/react-visibility-observer.svg)
+[![github license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/jonikanerva/react-visibility-observer/blob/master/license) [![npm version](https://img.shields.io/npm/v/react-visibility-observer.svg?color=brightgreen)](https://www.npmjs.com/package/react-visibility-observer) [![npm bundle size](https://img.shields.io/bundlephobia/min/react-visibility-observer.svg?color=brightgreen)](https://www.npmjs.com/package/react-visibility-observer) [![downloads](https://img.shields.io/npm/dw/react-visibility-observer.svg)](https://www.npmjs.com/package/react-visibility-observer) [![react](https://img.shields.io/npm/dependency-version/react-visibility-observer/peer/react.svg?color=brightgreen)](https://www.npmjs.com/package/react-visibility-observer)
 
 # Install
 
