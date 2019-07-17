@@ -87,9 +87,10 @@ const { isVisible, entries } = useVisibilityObserver()
 
 # Browser Support
 
-Intersection Observer API is [compatible with all modern browsers](https://caniuse.com/#search=IntersectionObserver). If you need support for older browsers, use the [polyfill by W3C](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
+Intersection Observer API is [compatible with all modern browsers](https://caniuse.com/#search=IntersectionObserver).
+If you need support for older browsers, use the [polyfill by W3C](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
 
-Install with Yarn
+Install the polyfill with Yarn
 
 ```
 yarn add intersection-observer
