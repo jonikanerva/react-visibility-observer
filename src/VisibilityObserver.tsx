@@ -32,6 +32,9 @@ const removeObserver = (ref: DivRef, observer: IntersectionObserver) => {
   observer.disconnect()
 }
 
+const isTargetVisible = (entries: IntersectionObserverEntry[]) =>
+  entries.filter(obj => obj.isIntersecting === true).length > 0
+
 const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
   children,
   className,
@@ -45,18 +48,12 @@ const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
   const [observer, setObserver] = useState()
 
   const ref = useRef() as DivRef
-
   const observerOptions = { root, rootMargin, threshold }
   const observerCallback: IntersectionObserverCallback = observerEntries => {
-    const visible =
-      observerEntries.filter(obj => obj.isIntersecting === true).length > 0
+    const visible = isTargetVisible(observerEntries)
 
     setEntries(observerEntries)
     setIsVisible(visible)
-  }
-
-  if (isVisible === true && triggerOnce === true) {
-    removeObserver(ref, observer)
   }
 
   useEffect(() => {
@@ -69,6 +66,10 @@ const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
 
     return () => removeObserver(ref, intersectionObserver)
   }, [])
+
+  if (isVisible === true && triggerOnce === true) {
+    removeObserver(ref, observer)
+  }
 
   return (
     <div ref={ref} className={className}>
