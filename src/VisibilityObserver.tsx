@@ -3,12 +3,15 @@ import React, {
   useContext,
   useEffect,
   useRef,
-  useState
+  useState,
 } from 'react'
 
-const VisibilityContext = createContext({ isVisible: false, entries: [] })
-
 type DivRef = React.MutableRefObject<HTMLDivElement>
+
+interface VisibilityObserverResponse {
+  isVisible: boolean
+  entries: IntersectionObserverEntry[] | undefined
+}
 
 interface VisibilityObserverProps extends IntersectionObserverInit {
   children: React.ReactNode
@@ -19,21 +22,28 @@ interface VisibilityObserverProps extends IntersectionObserverInit {
   threshold?: number | number[]
 }
 
+const VisibilityContext = createContext<VisibilityObserverResponse>({
+  isVisible: false,
+  entries: [],
+})
+
 const addObserver = (ref: DivRef, observer: IntersectionObserver) => {
   if (ref.current) {
     observer.observe(ref.current)
   }
 }
 
-const removeObserver = (ref: DivRef, observer: IntersectionObserver) => {
-  if (ref.current) {
-    observer.unobserve(ref.current)
+const removeObserver = (ref: DivRef, observer?: IntersectionObserver) => {
+  if (observer) {
+    if (ref.current) {
+      observer.unobserve(ref.current)
+    }
+    observer.disconnect()
   }
-  observer.disconnect()
 }
 
 const isTargetVisible = (entries: IntersectionObserverEntry[]) =>
-  entries.filter(obj => obj.isIntersecting === true).length > 0
+  entries.filter((obj) => obj.isIntersecting === true).length > 0
 
 const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
   children,
@@ -41,15 +51,15 @@ const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
   triggerOnce = false,
   root = null,
   rootMargin = '0 0 0 0',
-  threshold = 0
-}) => {
-  const [entries, setEntries] = useState()
-  const [isVisible, setIsVisible] = useState(false)
-  const [observer, setObserver] = useState()
+  threshold = 0,
+}: VisibilityObserverProps) => {
+  const [entries, setEntries] = useState<IntersectionObserverEntry[]>()
+  const [isVisible, setIsVisible] = useState<boolean>(false)
+  const [observer, setObserver] = useState<IntersectionObserver>()
 
   const ref = useRef() as DivRef
   const observerOptions = { root, rootMargin, threshold }
-  const observerCallback: IntersectionObserverCallback = observerEntries => {
+  const observerCallback: IntersectionObserverCallback = (observerEntries) => {
     const visible = isTargetVisible(observerEntries)
 
     setEntries(observerEntries)
@@ -80,12 +90,12 @@ const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
   )
 }
 
-const useVisibilityObserver = () => {
+const useVisibilityObserver = (): VisibilityObserverResponse => {
   const { isVisible, entries } = useContext(VisibilityContext)
 
   return {
     isVisible,
-    entries: entries as IntersectionObserverEntry[]
+    entries: entries,
   }
 }
 
