@@ -15,9 +15,6 @@
     "hooks",
     "context"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@jonikanerva"
-  },
   "homepage": "https://github.com/jonikanerva/react-visibility-observer#readme",
   "repository": {
     "type": "git",
