@@ -50,7 +50,7 @@ const VisibilityObserver: React.FC<VisibilityObserverProps> = ({
   className,
   triggerOnce = false,
   root = null,
-  rootMargin = '0 0 0 0',
+  rootMargin = '0px 0px 0px 0px',
   threshold = 0,
 }: VisibilityObserverProps) => {
   const [entries, setEntries] = useState<IntersectionObserverEntry[]>()
