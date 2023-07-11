@@ -88,27 +88,6 @@ const { isVisible, entries } = useVisibilityObserver()
 # Browser Support
 
 Intersection Observer API is [compatible with all modern browsers](https://caniuse.com/#search=IntersectionObserver).
-If you need support for older browsers, use the [polyfill by W3C](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
-
-Install the polyfill with Yarn
-
-```
-yarn add intersection-observer
-```
-
-or with NPM
-
-```
-npm install --save intersection-observer
-```
-
-and add to the top of your client's entry point
-
-```ts
-// Browser.tsx
-
-import 'intersection-observer'
-```
 
 # Contribute
 
